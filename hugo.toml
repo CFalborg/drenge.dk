@@ -7,4 +7,4 @@ disableKinds = ["taxonomy", "term"]
 [params]
   description = "Vi gør det du ikke gider."
   phone = "+45 12 34 56 78"
-  email = "hej@drenge.dk"
+  email = "drengefyn@gmail.com"
