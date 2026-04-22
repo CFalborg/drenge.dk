@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Site.Params.description }}" />
+
+  <!-- Google Fonts: Syne (headings) + DM Sans (brødtekst) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  {{ partial "nav.html" . }}
+  {{ partial "hero.html" . }}
+  {{ partial "services.html" . }}
+  {{ partial "about.html" . }}
+  {{ partial "gallery.html" . }}
+  {{ partial "contact.html" . }}
+  {{ partial "footer.html" . }}
+
+  <script>
+    /* ── Sticky nav-baggrund ved scroll ── */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    /* ── Fade-in ved scroll (Intersection Observer) ── */
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    /* ── Luk mobilmenu ved klik på link ── */
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-menu').classList.remove('open');
+        document.getElementById('burger').setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ── Hamburger toggle ── */
+    const burger = document.getElementById('burger');
+    burger.addEventListener('click', () => {
+      const menu = document.getElementById('nav-menu');
+      const isOpen = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(isOpen));
+    });
+  </script>
+
+</body>
+</html>
