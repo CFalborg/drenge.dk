@@ -1,0 +1,44 @@
+<!-- Om os — personlig, varm tekst -->
+<section id="om-os" class="section about">
+  <div class="container about-grid">
+
+    <div class="about-text fade-in">
+      <h2 class="section-title">Hvem er vi?</h2>
+      <!-- Ret teksten herunder — hold den personlig og ærlig -->
+      <p>
+        Vi er tre unge drenge fra lokalområdet, der gerne vil tjene lidt ekstra
+        og samtidig hjælpe vores naboer med de opgaver, der bare ikke bliver gjort.
+      </p>
+      <p>
+        Vi er ikke et stort firma — vi er tre venner med god arbejdsmoral og et
+        simpelt løfte: vi møder til tiden, gør arbejdet ordentligt og efterlader
+        stedet pænere end vi fandt det.
+      </p>
+      <p>
+        Ring til os — vi svarer hurtigt og finder en tid der passer dig.
+      </p>
+      <!-- Skift navn og telefonnummer herunder -->
+      <a href="tel:{{ .Site.Params.phone }}" class="btn btn-primary">
+        Ring til os: {{ .Site.Params.phone }}
+      </a>
+    </div>
+
+    <!-- Placeholder-foto til profilbillede -->
+    <div class="about-img fade-in">
+      <div class="img-placeholder">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#2d6a2d" rx="16"/>
+          <text x="50%" y="44%" text-anchor="middle" fill="#a8e063"
+                font-family="sans-serif" font-size="18" font-weight="bold">
+            Foto kommer snart
+          </text>
+          <text x="50%" y="58%" text-anchor="middle" fill="rgba(255,255,255,0.6)"
+                font-family="sans-serif" font-size="13">
+            (indsæt et billede af jer tre her)
+          </text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</section>
