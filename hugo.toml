@@ -1,6 +1,6 @@
 baseURL = "https://drenge.dk/"
 languageCode = "da"
-title = "Drenge"
+title = "De grønne drenge"
 
 disableKinds = ["taxonomy", "term"]
 
