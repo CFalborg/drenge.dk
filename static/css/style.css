@@ -279,7 +279,7 @@ ul { list-style: none; }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
@@ -499,6 +499,8 @@ ul { list-style: none; }
 ──────────────────────────── */
 @media (max-width: 640px) {
   :root { --section-py: 3.5rem; }
+
+  .cards { grid-template-columns: 1fr; }
 
   /* Vis hamburger, skjul menu som standard */
   .burger { display: flex; }
