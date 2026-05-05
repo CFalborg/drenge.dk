@@ -8,3 +8,6 @@ disableKinds = ["taxonomy", "term"]
   description = "Vi gør det du ikke gider."
   phone = "+45 12 34 56 78"
   email = "drengefyn@gmail.com"
+  postalCode = "5230"
+  addressLocality = "Odense M"
+  addressCountry = "DK"
