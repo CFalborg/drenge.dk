@@ -3,8 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ .Site.Title }}</title>
-  <meta name="description" content="{{ .Site.Params.description }}" />
+  <title>{{ .Site.Title }} — {{ .Site.Params.addressLocality }}</title>
+  <meta name="description" content="Lokal hjælp i {{ .Site.Params.addressLocality }}: vinduesvask, græsslåning, lugning af ukrudt, hente pakker og hundeluftning. Hurtigt, pålideligt og til fornuftige priser." />
+  <link rel="canonical" href="{{ .Site.BaseURL }}" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ .Site.BaseURL }}" />
+  <meta property="og:title" content="{{ .Site.Title }} — {{ .Site.Params.addressLocality }}" />
+  <meta property="og:description" content="Lokal hjælp i {{ .Site.Params.addressLocality }}: vinduesvask, græsslåning, lugning af ukrudt, hente pakker og hundeluftning." />
+  <meta property="og:locale" content="da_DK" />
+
+  <!-- Structured data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{{ .Site.Title }}",
+    "description": "Lokal hjælp i {{ .Site.Params.addressLocality }}: vinduesvask, græsslåning, lugning af ukrudt, hente pakker og hundeluftning.",
+    "url": "{{ .Site.BaseURL }}",
+    "email": "{{ .Site.Params.email }}",
+    "address": {
+      "@type": "PostalAddress",
+      "postalCode": "{{ .Site.Params.postalCode }}",
+      "addressLocality": "{{ .Site.Params.addressLocality }}",
+      "addressCountry": "{{ .Site.Params.addressCountry }}"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Odense"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Ydelser",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vinduesvask" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Græsslåning" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Luge ukrudt" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hente pakker" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hundeluftning" } }
+      ]
+    }
+  }
+  </script>
 
   <!-- Google Fonts: Syne (headings) + DM Sans (brødtekst) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
